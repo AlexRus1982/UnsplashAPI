@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
@@ -12,9 +6,11 @@ using Newtonsoft.Json;
 
 namespace UnsplashAPI {
     public partial class Form1 : Form {
+        
         public Form1() {
             InitializeComponent();
         }
+
         /// <summary>
         /// get method
         /// </summary>
@@ -27,7 +23,6 @@ namespace UnsplashAPI {
 
             using (var client = new HttpClient()) {
                 client.Timeout = TimeSpan.FromSeconds(3);
-
                 data = await client.GetStringAsync(fullUrl);
             }
 
@@ -81,7 +76,6 @@ namespace UnsplashAPI {
         private void button2_Click(object sender, EventArgs e) {
             button2.Visible     = false;
             webBrowser1.Visible = false;
-
             label1.Visible      = true;
             textBox1.Visible    = true;
             button1.Visible     = true;
